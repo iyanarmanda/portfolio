@@ -1,20 +1,15 @@
 ---
-// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 
-// Import semua section
 import Hero from '../components/Hero.astro';
 import Skills from '../components/Skills.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Certificates from '../components/Certificates.astro';
 import Footer from '../components/Footer.astro';
-
-import ImageModal from '../components/partials/ImageModal.svelte';
 ---
 
 <Layout title="Developer Portfolio">
-  <!-- Setiap komponen akan terpisah oleh space-y-24 dari tag <main> di Layout.astro -->
   
   <Hero />
   
@@ -24,11 +19,8 @@ import ImageModal from '../components/partials/ImageModal.svelte';
   
   <Projects />
   
-  <!-- Wajib tambahkan client:load atau client:idle agar JavaScript (modal) Svelte berjalan -->
   <Certificates />
   
   <Footer />
-
-  <ImageModal client:idle />
 
 </Layout>

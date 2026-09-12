@@ -4,6 +4,10 @@ import { getCollection, getEntry, render } from 'astro:content';
 const projectCollecion = await getCollection('projects');
 const siteData = await getEntry('site', 'config');
 
+if (!siteData) {
+  throw new Error('Sita data not found.');
+}
+
 const sortedProjects = projectCollecion.sort((a, b) => a.data.order - b.data.order);
 
 const projects = await Promise.all(

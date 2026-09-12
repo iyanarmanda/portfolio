@@ -12,9 +12,11 @@ const certificatesCollection = await getCollection('certificates');
   <ul class="space-y-3">
     {certificatesCollection.map((cert) => (
       <li>
-        <button 
-          data-image-url={cert.data.img}
-          class="modal-trigger w-full group flex items-center justify-between text-left card"
+        <a
+          href={cert.data.img}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full group flex items-center justify-between text-left card"
         >
           <div>
             <h4 class="font-medium text-zinc-900 dark:text-zinc-100">
@@ -28,23 +30,9 @@ const certificatesCollection = await getCollection('certificates');
             <p class="text-sm text-zinc-500">{cert.data.issuer}</p>
           </div>
           <span class="font-mono text-xs text-zinc-400">{cert.data.year}</span>
-        </button>
+        </a>
       </li>
     ))}
   </ul>
 </section>
-
-<script>
-  const triggers = document.querySelectorAll('.modal-trigger');
-
-  triggers.forEach(button => {
-    button.addEventListener('click', () => {
-      const url = button.getAttribute('data-image-url');
-      
-      window.dispatchEvent(new CustomEvent('open-image-modal', {
-        detail: { url }
-      }));
-    });
-  });
-</script>
 
