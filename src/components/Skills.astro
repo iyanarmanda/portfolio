@@ -1,29 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
+
+const skillsCollection = await getCollection('skills');
 ---
 
 <section class="space-y-6">
   <h3 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Skills</h3>
   
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="space-y-1.5">
-      <h4 class="font-mono text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Programming Languages</h4>
-      <p class="text-zinc-700 dark:text-zinc-300">Rust, JavaScript, TypeScript, C++, C</p>
-    </div>
-    
-    <div class="space-y-1.5">
-      <h4 class="font-mono text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Environment & Tools</h4>
-      <p class="text-zinc-700 dark:text-zinc-300">Git, Docker, Cloudflare, Linux, Neovim</p>
-    </div>
-    
-    <div class="space-y-1.5">
-      <h4 class="font-mono text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Frontend Frameworks</h4>
-      <p class="text-zinc-700 dark:text-zinc-300">Svelte, Astro, React, Tailwind CSS, SCSS</p>
-    </div>
-
-    <div class="space-y-1.5">
-      <h4 class="font-mono text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Backend & Databases</h4>
-      <p class="text-zinc-700 dark:text-zinc-300">NestJS, Axum, PostgreSQL, MongoDB, Redis</p>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> 
+    {skillsCollection.map((skillGroup) => (
+      <div class="space-y-1.5">
+        <h4 class="font-mono text-sm text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+          { skillGroup.data.category }
+        </h4>
+        <p class="text-zinc-700 dark:text-zinc-300">
+          { skillGroup.data.items.join(', ') }
+        </p>
+      </div>
+    ))} 
   </div>
 </section>
 

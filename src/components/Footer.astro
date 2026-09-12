@@ -1,4 +1,14 @@
 ---
+import { getEntry } from 'astro:content';
+
+const siteData = await getEntry('site', 'config');
+
+if (!siteData) {
+  throw new Error('Sita data not found.');
+}
+
+const { name, email, github, linkedin, status } = siteData.data;
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -9,11 +19,11 @@ const currentYear = new Date().getFullYear();
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
         <p class="font-mono text-xs uppercase tracking-widest text-zinc-900 dark:text-zinc-100">
-          Open for work
+          { status }
         </p>
       </div>
       <p class="text-sm text-zinc-500 dark:text-zinc-400">
-        © {currentYear} Ian Armanda. Built with Astro & Tailwind.
+        © {currentYear} { name }. Built with Astro & Tailwind.
       </p>
     </div>
 
@@ -22,13 +32,13 @@ const currentYear = new Date().getFullYear();
         Connect
       </p>
       <div class="flex flex-col gap-1.5 text-sm font-medium">
-        <a href="mailto:email@example.com" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
+        <a href=`mailto:${email}` class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
           Gmail ↗
         </a>
-        <a href="https://linkedin.com/in/username" target="_blank" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
+        <a href={linkedin} target="_blank" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
           LinkedIn ↗
         </a>
-        <a href="https://github.com/username" target="_blank" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
+        <a href={github} target="_blank" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors inline-flex items-center gap-2">
           GitHub ↗
         </a>
       </div>
@@ -36,3 +46,4 @@ const currentYear = new Date().getFullYear();
     
   </div>
 </footer>
+

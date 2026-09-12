@@ -1,27 +1,31 @@
 ---
+import { getEntry, render } from 'astro:content';
+
+const siteData = await getEntry('site', 'config');
+const heroEntry = await getEntry('hero', 'description');
+
+if (!siteData || !heroEntry) {
+  throw new Error(`Data not found. siteData: ${!!siteData}, heroEntry: ${!!heroEntry}`);
+}
+
+const { name, role } = siteData.data;
+const { Content } = await render(heroEntry);
 ---
 
-<section class="space-y-6 animate-fade-in">
+<section class="space-y-6">
   <div class="space-y-2">
     <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-      Ian Armanda
+      { name }
     </h1>
     <h2 class="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-medium">
-      Software Developer & Game Designer.
+      { role }
     </h2>
   </div>
 
-  <p class="max-w-2xl text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-    I specialize in backend architecture using <span class="font-medium text-zinc-900 dark:text-zinc-200">Node.js</span> and <span class="font-medium text-zinc-900 dark:text-zinc-200">TypeScript</span>, with a strong passion for building system-level utilities in <span class="font-medium text-zinc-900 dark:text-zinc-200">Rust</span>. Currently exploring Assembly and game design.
-  </p>
+  <div class="max-w-2xl text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 
+              [&_strong]:font-medium [&_strong]:text-zinc-900 dark:[&_strong]:text-zinc-200">
+    <Content />
+  </div>
 
 </section>
-
-<style>
-  .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
 

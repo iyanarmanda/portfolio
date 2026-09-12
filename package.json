@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro-check && svelte-check",
+    "check": "astro check && tsc --noEmit && svelte-check --tsconfig tsconfig.json",
     "astro": "astro"
   },
   "dependencies": {

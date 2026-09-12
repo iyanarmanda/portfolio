@@ -1,0 +1,15 @@
+- id: "language"
+  category: "Programming Languages"
+  items: ["Rust", "JavaScript", "TypeScript", "C++", "C"]
+
+- id: "environment"
+  category: "Environment & Tools"
+  items: ["Git", "Docker", "Cloudflare", "Neovim", "Linux"]
+
+- id: "frontend"
+  category: "Frontend Frameworks"
+  items: ["React", "Svelte", "Astro", "Tailwind CSS", "SCSS"]
+
+- id: "backend"
+  category: "Backend & Databases"
+  items: ["NestJS", "Axum", "PostgreSQL", "MonngoDB", "Redis"]

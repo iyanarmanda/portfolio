@@ -1,0 +1,11 @@
+- id: "junior-web"
+  title: "Junior Web Programmer"
+  issuer: "National Certification"
+  year: "2026"
+  img: "/images/certificates/junior-web.jpg"
+
+- id: "backend-developer"
+  title: "Expert JavaScript Backend Developer"
+  issuer: "Codepolitan"
+  year: "2025"
+  img: "/images/certificates/codepolitan.jpg"

@@ -1,25 +1,24 @@
 ---
-const certificates = [
-  { title: "Junior Web Programmer", issuer: "National Certification", year: "2025", img: "/images/cert-junior-web.jpg" },
-  { title: "Advanced Rust Programming", issuer: "Rust Foundation", year: "2026", img: "/images/cert-rust.jpg" }
-];
+import { getCollection } from 'astro:content';
+
+const certificatesCollection = await getCollection('certificates');
 ---
 
 <section id="certificates" class="space-y-6">
   <h3 class="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Certificates</h3>
   
   <ul class="space-y-3">
-    {certificates.map((cert) => (
+    {certificatesCollection.map((cert) => (
       <li>
         <button 
-          data-image-url={cert.img}
+          data-image-url={cert.data.img}
           class="modal-trigger w-full group flex items-center justify-between py-2 text-left hover:bg-zinc-100 dark:hover:bg-zinc-800/50 rounded-md transition-colors -mx-2 px-2"
         >
           <div>
-            <h4 class="font-medium text-zinc-900 dark:text-zinc-100 group-hover:underline underline-offset-4">{cert.title}</h4>
-            <p class="text-sm text-zinc-500">{cert.issuer}</p>
+            <h4 class="font-medium text-zinc-900 dark:text-zinc-100 group-hover:underline underline-offset-4">{cert.data.title}</h4>
+            <p class="text-sm text-zinc-500">{cert.data.issuer}</p>
           </div>
-          <span class="font-mono text-xs text-zinc-400">{cert.year} ↗</span>
+          <span class="font-mono text-xs text-zinc-400">{cert.data.year} ↗</span>
         </button>
       </li>
     ))}
