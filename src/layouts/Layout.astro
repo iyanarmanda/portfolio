@@ -1,0 +1,60 @@
+---
+import '@fontsource/geist-sans';
+import '@fontsource/geist-mono';
+import '../styles/global.css';
+
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A minimalist software developer portfolio" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Script Dark Mode: Ditaruh di head untuk mencegah FOUC (Flash of Unstyled Content) -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+
+  <body class="flex flex-col min-h-screen font-sans">
+    
+    <Navbar />
+
+    <main class="flex-grow max-w-3xl w-full mx-auto px-6 pt-12 pb-6 md:pt-24 md:pb-12 space-y-24 md:space-y-32">
+      <slot />
+    </main>
+
+  </body>
+</html>
+
