@@ -64,22 +64,30 @@ import MoonIcon from '../icons/MoonIcon.astro';
   const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
   const themeToggleBtn = document.getElementById('theme-toggle');
 
-  if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleLightIcon?.classList.remove('hidden');
-  } else {
+  const updateIcons = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
       themeToggleDarkIcon?.classList.remove('hidden');
-  }
+      themeToggleLightIcon?.classList.add('hidden');
+    } else {
+      themeToggleLightIcon?.classList.remove('hidden');
+      themeToggleDarkIcon?.classList.add('hidden');
+    }
+  };
 
-  themeToggleBtn?.addEventListener('click', function() {
-      themeToggleDarkIcon?.classList.toggle('hidden');
-      themeToggleLightIcon?.classList.toggle('hidden');
+  updateIcons();
 
-      if (localStorage.getItem('theme') === 'light') {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-      } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-      }
+  themeToggleBtn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    
+    updateIcons();
   });
 </script>
