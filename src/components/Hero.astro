@@ -12,7 +12,7 @@ const { name, role } = siteData.data;
 const { Content } = await render(heroEntry);
 ---
 
-<section class="space-y-6">
+<section class="space-y-6" id="hero">
   <div class="space-y-2">
     <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
       { name }
@@ -22,8 +22,7 @@ const { Content } = await render(heroEntry);
     </h2>
   </div>
 
-  <div class="max-w-2xl text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 
-              [&_strong]:font-medium [&_strong]:text-zinc-900 dark:[&_strong]:text-zinc-200">
+  <div class="max-w-2xl text-base md:text-lg text-zinc-600 dark:text-zinc-400 markdown">
     <Content />
   </div>
 

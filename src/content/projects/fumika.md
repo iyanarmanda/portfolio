@@ -2,7 +2,7 @@
 title: "Fumika Blog Template"
 tech: ["Astro", "Svelte", "Tailwind CSS", "SCSS"]
 year: "2026"
-githubUrl: "https://github.com/iyanarmanda/fumika"
+url: "https://github.com/iyanarmanda/fumika"
 order: 1
 ---
 

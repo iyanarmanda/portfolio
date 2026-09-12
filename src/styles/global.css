@@ -12,4 +12,29 @@
     @apply dark:bg-zinc-950 dark:text-zinc-200 dark:selection:bg-zinc-700 dark:selection:text-zinc-100;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  html {
+    @apply scroll-smooth scroll-pt-25 md:scroll-pt-40;
+  }
+
+  .title {
+    @apply text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100;
+  }
+
+  .markdown {
+    @apply leading-relaxed;
+    @apply [&_strong]:font-medium [&_strong]:text-zinc-900 dark:[&_strong]:text-zinc-200;
+  }
+
+  .hover-underline {
+    @apply group-hover:underline underline-offset-4 cursor-pointer;
+  }
+
+  .card {
+    @apply hover:bg-zinc-100 dark:hover:bg-zinc-800/50 rounded-md transition-colors p-2 -mx-2 block cursor-pointer;
+
+    .item-title {
+      @apply group-hover:underline underline-offset-4;
+    }
+  }
 }

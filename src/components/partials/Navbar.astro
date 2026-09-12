@@ -1,17 +1,30 @@
 ---
+import SunIcon from '../icons/SunIcon.astro';
+import MoonIcon from '../icons/MoonIcon.astro';
 ---
+
+<style>
+  @reference "../../styles/global.css";
+
+  .navbar {
+    @apply text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:underline underline-offset-4 transition-colors;
+  }
+</style>
 
 <header class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-zinc-50/90 dark:bg-zinc-950/90 border-b border-zinc-200/50 dark:border-zinc-800/50">
   <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
     
     <nav class="flex gap-4 sm:gap-6 font-mono text-xs sm:text-sm tracking-widest uppercase">
-      <a href="#experience" class="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
+      <a href="#hero" class="navbar">
+        Hero
+      </a>
+      <a href="#experience" class="navbar">
         Exp
       </a>
-      <a href="#projects" class="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">
+      <a href="#projects" class="navbar">
         Work
       </a>
-      <a href="#certificates" class="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors hidden sm:block">
+      <a href="#certificates" class="navbar hidden sm:block">
         Cert
       </a>
     </nav>
@@ -35,15 +48,11 @@
 
       <button 
         id="theme-toggle" 
-        class="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors focus:outline-none"
+        class="navbar focus:outline-none"
         aria-label="Toggle Dark Mode"
       >
-        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
-        </svg>
-        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
+        <SunIcon id="theme-toggle-light-icon" class="hidden w-4 h-4" />
+        <MoonIcon id="theme-toggle-dark-icon" class="hidden w-4 h-4" />
       </button>
 
     </div>

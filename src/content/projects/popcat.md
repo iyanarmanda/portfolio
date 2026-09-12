@@ -2,7 +2,7 @@
 title: "PopCat Audio State Monitor"
 tech: ["Rust", "cpal", "Audio-Stream"]
 year: "2026"
-githubUrl: "https://github.com/username/audio-monitor"
+url: "https://github.com/username/audio-monitor"
 order: 2
 ---
 
