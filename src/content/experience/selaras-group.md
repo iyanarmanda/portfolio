@@ -3,6 +3,7 @@ role: "Full-Stack Developer Intern"
 company: "PT Selaras Mitra Gemilang"
 startDate: "2025"
 endDate: "2026"
+url: "/images/certificates/selaras-group/intern-2026.pdf"
 order: 1
 ---
 

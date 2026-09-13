@@ -16,13 +16,6 @@
   year: "2026"
   img: "/images/certificates/selaras-group/intern-2026.pdf"
 
-# Remember to hide this (4) once day
-- id: 4
-  title: "Junior Web Programmer"
-  issuer: "Indonesian Professional Certification Authority"
-  year: "2025"
-  img: "/images/certificates/bnsp/junior-web-programmer-2025.jpg"
-
 - id: 5
   title: "JavaScript Expert Backend Developer"
   issuer: "Codepolitan"

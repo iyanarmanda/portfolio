@@ -42,6 +42,7 @@ const experience = defineCollection({
     company: z.string(),
     startDate: z.string(),
     endDate: z.string().default('Present'),
+    url: z.string().optional(),
     order: z.number().default(0),
   })
 });

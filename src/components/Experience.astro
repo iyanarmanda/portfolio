@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const experienceCollecion = await getCollection('experience');
 
@@ -31,9 +31,24 @@ const experience = await Promise.all(
             <h4 class="font-medium text-zinc-900 dark:text-zinc-100">
               {data.role}
             </h4>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
-              {data.company}
-            </p>
+
+            {data.url ? (
+              <a 
+                href={data.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors group"
+              >
+                <span class="hover-underline">{data.company}</span>
+                <span class="font-mono text-xs text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
+                  (Cert ↗)
+                </span>
+              </a>
+            ) : (
+              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                {data.company}
+              </p>
+            )}
           </div>
 
           <div class="markdown text-zinc-600 dark:text-zinc-400 text-sm md:text-base">
