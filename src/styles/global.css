@@ -26,6 +26,7 @@
   .markdown {
     @apply leading-relaxed;
     @apply [&_strong]:font-medium [&_strong]:text-zinc-900 dark:[&_strong]:text-zinc-200;
+    @apply [&_ul]:list-disc [&_ul]:list-outside [&_ul]:ml-4 [&_ul]:space-y-2;
   }
 
   .hover-underline {
