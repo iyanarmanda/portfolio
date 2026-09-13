@@ -16,7 +16,7 @@
   }
 
   html {
-    @apply scroll-smooth scroll-pt-25 md:scroll-pt-40;
+    @apply scroll-smooth scroll-pt-25 md:scroll-pt-30;
   }
 
   .title {
