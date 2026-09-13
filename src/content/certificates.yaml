@@ -1,11 +1,37 @@
-- id: "junior-web"
-  title: "Junior Web Programmer"
-  issuer: "National Certification"
+- id: 1
+  title: "Cybersecurity Investigator"
+  issuer: "PT Vinix Seven Aurum"
   year: "2026"
-  img: "/images/certificates/junior-web.jpg"
+  img: "/images/certificates/vinix7/dfir-2026.pdf"
 
-- id: "backend-developer"
-  title: "Expert JavaScript Backend Developer"
-  issuer: "Codepolitan"
+- id: 2
+  title: "AWS Cloud Practitioner Essentials"
+  issuer: "AWS"
+  year: "2026"
+  img: "/images/certificates/aws/aws-cloud-practitioner-essentials-2026.pdf"
+
+- id: 3
+  title: "IT Internship"
+  issuer: "PT Selaras Mitra Gemilang"
+  year: "2026"
+  img: "/images/certificates/selaras-group/intern-2026.pdf"
+
+# Remember to hide this (4) once day
+- id: 4
+  title: "Junior Web Programmer"
+  issuer: "Indonesian Professional Certification Authority"
   year: "2025"
-  img: "/images/certificates/codepolitan.jpg"
+  img: "/images/certificates/bnsp/junior-web-programmer-2025.jpg"
+
+- id: 5
+  title: "JavaScript Expert Backend Developer"
+  issuer: "Codepolitan"
+  year: "2024"
+  img: "/images/certificates/codepolitan/nestjs-2024.pdf"
+
+- id: 6
+  title: "Certified Developer"
+  issuer: "Alibaba"
+  year: "2023"
+  img: "/images/certificates/alibaba/certified-developer-2023.jpg"
+

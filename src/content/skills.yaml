@@ -1,15 +1,19 @@
-- id: "language"
+- id: 1
   category: "Programming Languages"
-  items: ["Rust", "JavaScript", "TypeScript", "C++", "C"]
+  items: ["TypeScript", "C++", "C", "Rust"]
 
-- id: "environment"
-  category: "Environment & Tools"
-  items: ["Git", "Docker", "Cloudflare", "Neovim", "Linux"]
+- id: 2
+  category: "Frontend"
+  items: ["React", "Svelte", "Astro", "Tailwind", "SCSS"]
 
-- id: "frontend"
-  category: "Frontend Frameworks"
-  items: ["React", "Svelte", "Astro", "Tailwind CSS", "SCSS"]
+- id: 3
+  category: "Backend"
+  items: ["NestJS", "Axum", "GraphQL", "Meilisearch", "Swagger"]
 
-- id: "backend"
-  category: "Backend & Databases"
-  items: ["NestJS", "Axum", "PostgreSQL", "MonngoDB", "Redis"]
+- id: 4
+  category: "Databases"
+  items: ["MySQL", "PostreSQL", "MongoDB", "Redis"]
+
+- id: 5
+  category: "DevOps & Tools"
+  items: ["Docker", "Linux", "NX", "CI/CD"]
