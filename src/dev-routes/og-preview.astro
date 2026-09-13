@@ -1,0 +1,55 @@
+---
+import '@fontsource/geist-sans';
+import '@fontsource/geist-mono';
+import '../styles/global.css';
+import { getEntry } from 'astro:content';
+
+const siteData = await getEntry('site', 'config');
+
+if (!siteData) {
+  throw new Error('Sita data not found.');
+}
+
+const { name, role, domain, ogSkills } = siteData.data;
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OG Preview Generator</title>
+  </head>
+  <body class="bg-zinc-950 font-sans flex items-center justify-center min-h-screen">
+    
+    <div 
+      class="relative w-[1200px] h-[630px] bg-zinc-950 border border-zinc-900 shadow-2xl flex flex-col justify-between p-24 overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(circle, #a1a1aa 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+      <div class="relative z-10 space-y-4">
+        <div class="inline-block px-4 py-1.5 border border-zinc-800 rounded-full font-mono text-sm tracking-widest uppercase text-zinc-400">
+          Portfolio
+        </div>
+        
+        <h1 class="text-7xl font-semibold tracking-tight text-zinc-50 mt-4 leading-tight">
+          {name}
+        </h1>
+        <h2 class="text-4xl text-zinc-400 font-medium">
+          {role}
+        </h2>
+      </div>
+
+      <div class="relative z-10 flex items-end justify-between w-full border-t border-zinc-800 pt-8 mt-auto">
+        <div class="flex gap-4 font-mono text-xl text-zinc-500 uppercase tracking-widest">
+          { ogSkills.join(' • ') }
+        </div>
+        
+        <div class="font-mono text-xl text-zinc-600 font-medium tracking-wide">
+          {domain}
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
+</html>

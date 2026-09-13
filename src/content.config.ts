@@ -12,6 +12,8 @@ const site = defineCollection({
     github: z.string(),
     linkedin: z.string(),
     status: z.string(),
+    domain: z.string(),
+    ogSkills: z.array(z.string())
   })
 });
 
