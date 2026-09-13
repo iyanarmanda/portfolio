@@ -5,9 +5,7 @@ const projectCollecion = await getCollection('projects');
 const siteData = await getEntry('site', 'config');
 
 if (!siteData) {
-  throw new Error('Sita data not found.');
-}
-
+  throw new Error('Sita data not found.'); }
 const sortedProjects = projectCollecion.sort((a, b) => a.data.order - b.data.order);
 
 const projects = await Promise.all(
@@ -55,7 +53,7 @@ const { github } = siteData.data;
 
     <div class="pt-6">
       <a 
-        href=`${github}tab=repositories` 
+        href=`${github}?tab=repositories` 
         target="_blank"
         rel="noopener noreferrer"
         class="group inline-flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors tracking-widest"

@@ -10,11 +10,12 @@
   year: "2026"
   img: "/images/certificates/aws/aws-cloud-practitioner-essentials-2026.pdf"
 
-- id: 3
-  title: "IT Internship"
-  issuer: "PT Selaras Mitra Gemilang"
-  year: "2026"
-  img: "/images/certificates/selaras-group/intern-2026.pdf"
+  # Remember to hide this once day
+- id: 4
+  title: "Junior Web Programmer"
+  issuer: "Indonesian Professional Certification Authority"
+  year: "2025"
+  img: "/images/certificates/bnsp/junior-web-programmer-2025.jpg"
 
 - id: 5
   title: "JavaScript Expert Backend Developer"
